@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #050b1f, #000);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Hero Section */
+.hero {
+  padding: 120px 20px;
+}
+
+h1 {
+  color: gold;
+  text-shadow: 0 0 15px yellow;
+}
+
+/* Interactive Buttons */
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: gold;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: orange;
+}
+
+/* General Sections */
+.section {
+  padding: 100px 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Cake Animation */
+.cake {
+  font-size: 70px;
+  animation: pop 1s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Floating Balloons */
+.balloon {
+  width: 30px;
+  height: 40px;
+  background: red; /* Default balloon color */
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  position: absolute;
+  bottom: -50px;
+  animation: floatUp 8s infinite linear;
+  z-index: 10;
+}
+
+/* Balloon String */
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(20deg);
+    opacity: 0;
+  }
+}
